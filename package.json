@@ -6,7 +6,7 @@
   "scripts": {
     "agreed": "node ./agreed/server.js",
     "agreed-ui": "agreed-ui --path ./agreed/ --port 8101",
-    "agreed-build": "agreed-ui --path ./agreed/ --dist ./dev-build"
+    "agreed-build": "agreed-ui build --path ./agreed/ --dest ./dev-dist"
   },
   "repository": {
     "type": "git",
