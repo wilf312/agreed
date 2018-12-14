@@ -1,5 +1,2 @@
 // save as agreed.js
-module.exports = [
-    require('./api/user/get')
-]
-  
+module.exports = [require('./api/user/get')]
