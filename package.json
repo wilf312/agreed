@@ -1,27 +1,44 @@
 {
-  "name": "agreed-mock",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "agreed": "node ./agreed/server.js",
-    "agreed-ui": "agreed-ui --path ./agreed/ --port 8101",
-    "agreed-build": "agreed-ui build --path ./agreed/ --dest ./dev-dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wilf312/agreed-mock.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wilf312/agreed-mock/issues"
-  },
-  "homepage": "https://github.com/wilf312/agreed-mock#readme",
-  "devDependencies": {
-    "agreed": "^3.2.1",
-    "agreed-ui": "^0.2.5",
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4"
-  }
+    "name": "agreed-mock",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "agreed": "node ./agreed/server.js",
+        "agreed-ui": "agreed-ui --path ./agreed/ --port 8101",
+        "agreed-build": "agreed-ui build --path ./agreed/ --dest ./dev-dist",
+        "fix": "prettier --config .editorconfig --write "
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wilf312/agreed-mock.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/wilf312/agreed-mock/issues"
+    },
+    "homepage": "https://github.com/wilf312/agreed-mock#readme",
+    "devDependencies": {
+        "agreed": "^3.2.1",
+        "agreed-ui": "^0.2.5",
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "prettier": "1.15.3"
+    },
+    "dependencies": {
+        "husky": "^1.2.0",
+        "lint-staged": "^8.1.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,json,css,md}": [
+            "prettier --write",
+            "git add"
+        ]
+    }
 }

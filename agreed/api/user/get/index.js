@@ -1,26 +1,26 @@
-module.exports =  {
-        request: {
-          path: '/user/:id',
-          method: 'GET'
+module.exports = {
+    request: {
+        path: '/user/:id',
+        method: 'GET',
+    },
+    response: {
+        headers: {
+            'x-csrf-token': 'csrf-token',
         },
-        response: {
-          headers: {
-            'x-csrf-token': 'csrf-token', 
-          },
-          body: {
+        body: {
             message: '{:greeting} {:id} {:someQueryStrings}',
             images: '{:images}',
             themes: '{:themes}',
-          },
-          values: {
+        },
+        values: {
             greeting: 'hello',
             images: [
-              'http://example.com/foo.jpg',
-              'http://example.com/bar.jpg',
+                'http://example.com/foo.jpg',
+                'http://example.com/bar.jpg',
             ],
             themes: {
-              name: 'green',
+                name: 'green',
             },
-          }
         },
-      }
+    },
+}
