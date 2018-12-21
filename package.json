@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "agreed": "node ./agreed/server.js",
-    "agreed-ui": "agreed-ui --path ./agreed/ --port 8101",
+    "agreed": "nodemon --watch ./agreed.js --watch ./agreed/ --exec node ./agreed/server.js",
+    "agreed-ui": "nodemon --watch ./agreed.js --watch ./agreed/ --exec agreed-ui --path ./agreed/ --port 8101",
     "agreed-build": "agreed-ui build --path ./agreed/ --dest ./dev-dist",
     "fix": "prettier --config .prettierrc.toml --write agreed/**"
   },
@@ -24,6 +24,8 @@
     "agreed-ui": "^0.2.5",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "minimist": "^1.2.0",
+    "nodemon": "^1.18.9",
     "prettier": "1.15.3"
   },
   "dependencies": {
